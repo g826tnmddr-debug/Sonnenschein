@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wetter‑Finder</title>
+    <!-- PWA manifest and icons -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Import a clean, modern font for a friendly look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <h1>Wetter‑Finder</h1>
+        <p>Finde den sonnigsten Ort in deiner Nähe – ohne Regen.</p>
+        <form id="searchForm" class="form">
+            <div class="field">
+                <label for="location">Ort</label>
+                <input type="text" id="location" name="location" placeholder="z. B. Berlin" required>
+            </div>
+            <div class="field">
+                <label for="radius">Radius (km)</label>
+                <input type="number" id="radius" name="radius" value="50" min="1" max="500" required>
+            </div>
+            <button type="submit" class="primary">Suchen</button>
+        </form>
+        <section id="loading" class="hidden">Suche läuft…</section>
+        <section id="result" class="hidden"></section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
